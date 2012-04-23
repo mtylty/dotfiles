@@ -10,9 +10,10 @@
   co = checkout
   ci = commit
   br = branch
-  d = diff
+  d = diff --color-words
   a = add
-  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s (%C(green)%cr%Creset by %C(magenta)%an%Creset)' --abbrev-commit --date=relative
   ll = log --stat --abbrev-commit
+  alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
 [color]
   ui = true
