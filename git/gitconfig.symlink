@@ -1,0 +1,17 @@
+[user]
+  name = Matteo Latini
+  email = mtylty@gmail.com
+[github]
+  user = mtylty
+[core]
+  editor = /usr/bin/vim
+[alias]
+  s = status
+  co = checkout
+  ci = commit
+  br = branch
+  d = diff
+  a = add 
+  l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+[color]
+  ui = true
