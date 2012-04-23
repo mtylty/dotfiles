@@ -1,11 +1,6 @@
 export CLICOLOR=1
 export LSCOLORS="DxGxcxdxCxcgcdabagacad"
 
-# function to compute the current git branch
-parse_git_branch() {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
-}
-
 # Colors
 BLACK="\[\033[0;30m\]"
 DARK_GRAY="\[\033[1;30m\]"
@@ -25,9 +20,26 @@ YELLOW="\[\033[1;33m\]"
 WHITE="\[\033[1;37m\]"
 DEFAULT_COLOR="\[\033[00m\]"
 
-PS1="\`if [ \$? = 0 ];
-    then
-        echo -e '$GREEN--( $LIGHT_PURPLE\u$YELLOW@$LIGHT_CYAN\h$GREEN )--( $WHITE\A$GREEN )--( $YELLOW\w$GREEN )-- :)\n--\$$DEFAULT_COLOR ';
-    else
-        echo -e '$LIGHT_RED--( $LIGHT_PURPLE\u$YELLOW@$LIGHT_CYAN\h$LIGHT_RED )--( $WHITE\A$LIGHT_RED )--( $YELLOW\w$LIGHT_RED )-- :(\n--\$$DEFAULT_COLOR ';
-    fi; \`"
+# function to compute the current git branch
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'
+}
+
+build_ps1() {
+  EXIT=$?
+  BRANCH=$(parse_git_branch)
+
+  if [ $EXIT -eq 0 ]; then
+    test $BRANCH && BRANCH="( $YELLOW$BRANCH$GREEN )"
+  else
+    test $BRANCH && BRANCH="( $YELLOW$BRANCH$LIGHT_RED )"
+  fi
+
+  if [ $EXIT -eq 0 ]; then
+    PS1="$GREEN--( $LIGHT_PURPLE\u$YELLOW@$LIGHT_CYAN\h$GREEN )--( $WHITE\A$GREEN )--( $YELLOW\w$GREEN )--$BRANCH :)\n--\$$DEFAULT_COLOR "
+  else
+    PS1="$LIGHT_RED--( $LIGHT_PURPLE\u$YELLOW@$LIGHT_CYAN\h$LIGHT_RED )--( $WHITE\A$LIGHT_RED )--( $YELLOW\w$LIGHT_RED )--$BRANCH :(\n--\$$DEFAULT_COLOR "
+  fi
+}
+
+PROMPT_COMMAND=build_ps1
