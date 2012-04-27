@@ -3,9 +3,7 @@
 " Generic
 set nocompatible
 set showcmd
-set mouse=a
 set number
-set autochdir
 syntax on
 
 " Search
