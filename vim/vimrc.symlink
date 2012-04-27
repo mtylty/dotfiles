@@ -5,12 +5,17 @@ set nocompatible
 set showcmd
 set mouse=a
 set number
+set autochdir
 syntax on
 
 " Search
 set hlsearch
 set ignorecase
 set smartcase
+
+" Status bar
+set laststatus=2
+set statusline=%F%m%r%h%w\ %=\ [POS:%l,%v][%p%%]
 
 " Indent
 set backspace=indent,eol,start
