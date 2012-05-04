@@ -5,6 +5,11 @@ alias la="ls -aG"
 alias lla="ls -laG"
 alias grep="grep --color"
 
+# Lock Mac OSX Session
+alias lockscreen="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
+# Start Mac OSX screensaver
+alias screensaver="open -a /System/Library/Frameworks/ScreenSaver.framework//Versions/A/Resources/ScreenSaverEngine.app"
+
 # Update dotfiles
 alias dotfiles="(cd ~/.dotfiles && git pull && source ~/.bash_profile)"
 
