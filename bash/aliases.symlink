@@ -13,4 +13,7 @@ alias screensaver="open -a /System/Library/Frameworks/ScreenSaver.framework//Ver
 # Update dotfiles
 alias dotfiles="(cd ~/.dotfiles && git pull && source ~/.bash_profile)"
 
+# Databases
+alias mongodb="mongod run --config /usr/local/etc/mongod.conf"
+
 alias proj=". $HOME/.dotfiles/scripts/proj.sh"
