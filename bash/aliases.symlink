@@ -5,6 +5,9 @@ alias la="ls -aG"
 alias lla="ls -laG"
 alias grep="grep --color"
 
+# Save some kestrokes for ruby projects
+alias be="bundle exec"
+
 # Lock Mac OSX Session
 alias lockscreen="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
 # Start Mac OSX screensaver
