@@ -43,7 +43,7 @@ def symlink!(source, destination)
   puts "#{source} => #{destination}"
 
   if yesno("Delete #{destination} and symlink from #{source} ?", false)
-    FileUtils.rm_rf(destination) if File.symlink?(destination) || File.file?(destination) || File.directory?(file)
+    FileUtils.rm_rf(destination) if File.symlink?(destination) || File.file?(destination) || File.directory?(destination)
     FileUtils.ln_s(source, destination)
   end
 end
