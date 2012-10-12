@@ -1,0 +1,14 @@
+{
+	"auto_upgrade_last_run": 1350043144,
+	"installed_packages":
+	[
+		"CoffeeScript",
+		"Git",
+		"Package Control",
+		"RubyTest"
+	],
+	"repositories":
+	[
+		"https://github.com/maltize/sublime-text-2-ruby-tests.git"
+	]
+}
