@@ -7,6 +7,8 @@ ruby:
 ssh:
   'config': '~/.ssh'
 sublime:
-   '.': '~/Library/Application Support/Sublime Text 2/Packages'
+   'packages': '~/Library/Application Support/Sublime Text 2/Packages'
+   'installed packages': '~/Library/Application Support/Sublime Text 2/Installed Packages'
+   'pristine packages': '~/Library/Application Support/Sublime Text 2/Pristine Packages'
 vim:
   '*': '~'
