@@ -1,6 +1,5 @@
 require 'rake'
 require 'yaml'
-require 'highline/import'
 
 desc "Hook our dotfiles into system-standard positions."
 task :install do
@@ -42,19 +41,14 @@ private
 def symlink!(source, destination)
   puts "#{source} => #{destination}"
 
-  if yesno("Delete #{destination} and symlink from #{source} ?", false)
+  if yesno("Delete #{destination} and symlink from #{source} ? [y/N] ", false)
     FileUtils.rm_rf(destination) if File.symlink?(destination) || File.file?(destination) || File.directory?(destination)
     FileUtils.ln_s(source, destination)
   end
 end
 
-def yesno(prompt = 'Continue?', default = true)
-  a = ''
-  s = default ? '[Y/n]' : '[y/N]'
-  d = default ? 'y' : 'n'
-  until %w[y n].include? a
-    a = ask("#{prompt} #{s} ") { |q| q.limit = 1; q.case = :downcase }
-    a = d if a.length == 0
-  end
-  a == 'y'
+def yesno(prompt, default)
+  print(prompt)
+  result = gets.strip
+  result.empty? ? default : result.downcase == 'y'
 end
