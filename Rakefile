@@ -5,12 +5,6 @@ task :install do
 
   linkables = Dir.glob(File.join(ENV["HOME"], '.dotfiles', '*/**{.symlink}'))
 
-  # Add dropbox configuration if present
-  dropbox_conf = File.join(ENV["HOME"], "Dropbox/Config/dotfiles")
-  if File.exists?(dropbox_conf) && File.directory?(dropbox_conf)
-    linkables |= Dir.glob(dropbox_conf+'/**/*{.symlink}')
-  end
-
   skip_all = false
   overwrite_all = false
   backup_all = false

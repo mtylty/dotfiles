@@ -20,10 +20,6 @@ The install rake task will symlink the appropriate files in `.dotfiles` to your
 home directory. Everything is configured and tweaked within `~/.dotfiles`,
 though.
 
-### Dropbox config files
-You can also create a folder into your Dropbox folder to keep your *private* dotfiles.
-Default is ~/Dropbox/Config/dotfiles customizable from the Rakefile
-
 ### Project switcher with folder autocompletion and gemset automatic switch (WIP)
 
 #### How does it works ( Edit code if you want to change this stuff )
