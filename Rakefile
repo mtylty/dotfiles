@@ -9,9 +9,11 @@ task :install do
 
   targets.each do |app, linkables|
     linkables.each do |relative_source, destination|
-      sources = Dir.glob(File.join(ENV["HOME"], '.dotfiles', app, relative_source))
+      sources = Dir.glob(File.join(ENV["HOME"], '.dotfiles', app, relative_source), File::FNM_DOTMATCH)
 
+      sources = sources.reject{|s| File.basename(s) =~ /^(\.|\.\.)$/ }
       sources = sources.map{|s| File.expand_path(s) }
+
       full_destination = File.expand_path(destination)
 
       sources.each do |source|
@@ -20,11 +22,7 @@ task :install do
           symlink!(source, full_destination)
         elsif File.file?(source) && File.directory?(full_destination)
           # file to directory
-          if source =~ /\.symlink$/
-            symlink!(source, File.join(full_destination, ".#{File.basename(source, '.symlink')}"))
-          else
-            symlink!(source, File.join(full_destination, File.basename(source)))
-          end
+          symlink!(source, File.join(full_destination, File.basename(source)))
         else
           # file to file
           symlink!(source, full_destination)
@@ -45,7 +43,7 @@ def symlink!(source, destination)
   puts "#{source} => #{destination}"
 
   if yesno("Delete #{destination} and symlink from #{source} ?", false)
-    FileUtils.rm_rf(destination) if File.exists?(destination)
+    FileUtils.rm_rf(destination) if File.symlink?(destination) || File.file?(destination) || File.directory?(file)
     FileUtils.ln_s(source, destination)
   end
 end
