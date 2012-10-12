@@ -1,0 +1,12 @@
+bash:
+  '*': '~'
+git:
+  '*': '~'
+ruby:
+  '*': '~'
+ssh:
+  'config': '~/.ssh'
+sublime:
+   '.': '~/Library/Application Support/Sublime Text 2/Packages'
+vim:
+  '*': '~'
