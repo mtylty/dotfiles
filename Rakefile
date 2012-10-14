@@ -3,12 +3,9 @@ require 'yaml'
 
 desc "Hook our dotfiles into system-standard positions."
 task :install do
-
-  targets = YAML::load(File.open(File.join(ENV["HOME"], '.dotfiles', 'targets.yml')))
-
   targets.each do |app, linkables|
     linkables.each do |relative_source, destination|
-      sources = Dir.glob(File.join(ENV["HOME"], '.dotfiles', app, relative_source), File::FNM_DOTMATCH)
+      sources = Dir.glob(File.join(dotfiles_path, app, relative_source), File::FNM_DOTMATCH)
 
       sources = sources.reject{|s| File.basename(s) =~ /^(\.|\.\.)$/ }
       sources = sources.map{|s| File.expand_path(s) }
@@ -37,6 +34,14 @@ end
 task :default => 'install'
 
 private 
+
+def dotfiles_path
+  @dotfiles_path ||= File.join(ENV["HOME"], '.dotfiles')
+end
+
+def targets
+  @targets ||= YAML::load(File.open(File.join(dotfiles_path, 'targets.yml')))
+end
 
 def symlink!(source, destination)
   puts "#{source} => #{destination}"
