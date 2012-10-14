@@ -29,9 +29,13 @@ ZSH_THEME="kphoen"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rake)
+plugins=(bundler git rails rake rvm)
 
-source $ZSH/oh-my-zsh.sh
+# Load Oh my zsh scripts
+[ -r "$ZSH/oh-my-zsh.sh" ] && source "$ZSH/oh-my-zsh.sh"
 
-# Customize to your needs...
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/opt/X11/bin:/Users/matteo/.rvm/bin:/Users/matteo/.rvm/bin
+# Exports
+[ -r "$HOME/.exports" ] && source "$HOME/.exports"
+
+# Aliases
+[ -r "$HOME/.aliases" ] && source "$HOME/.aliases"
