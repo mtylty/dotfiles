@@ -1,5 +1,6 @@
-bash:
-  '*': '~'
+# Bash disabled in favour of zsh
+# bash:
+#   '*': '~'
 git:
   '*': '~'
 ruby:
