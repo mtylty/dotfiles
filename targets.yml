@@ -12,3 +12,5 @@ sublime:
    'pristine packages': '~/Library/Application Support/Sublime Text 2/Pristine Packages'
 vim:
   '*': '~'
+zsh:
+  '*': '~'
