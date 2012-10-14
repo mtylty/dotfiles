@@ -1,26 +1,60 @@
 {
-	"color_scheme": "Packages/Color Scheme - Default/All Hallow's Eve.tmTheme",
-  "theme": "Soda Dark.sublime-theme",
-  "soda_classic_tabs": true,
+	"auto_indent": true,
+	"caret_style": "phase",
+	"color_scheme": "Packages/User/Monokai Soda.tmTheme",
+	"create_window_at_startup": false,
+	"detect_indentation": true,
+	"draw_minimap_border": true,
+	"ensure_newline_at_eof_on_save": true,
+	"file_exclude_patterns":
+	[
+		"*.pyc",
+		"*.pyo",
+		"*.exe",
+		"*.dll",
+		"*.obj",
+		"*.o",
+		"*.a",
+		"*.lib",
+		"*.so",
+		"*.dylib",
+		"*.ncb",
+		"*.sdf",
+		"*.suo",
+		"*.pdb",
+		"*.idb",
+		".DS_Store",
+		"*.class",
+		"*.psd",
+		"*.db"
+	],
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		".bundle",
+		".idea"
+	],
 	"font_face": "consolas",
 	"font_size": 12.0,
-  "tab_size": 2,
-  "translate_tabs_to_spaces": true,
-  "use_tab_stops": true,
-  "detect_indentation": true,
-  "auto_indent": true,
-  "word_wrap": true,
-  "draw_minimap_border": true,
-  "caret_style": "phase",
-  "scroll_past_end": true,
-  "indent_guide_options": ["draw_active"],
-  "ensure_newline_at_eof_on_save": true,
-  "hot_exit": false,
-  "remember_open_files": false,
-  "create_window_at_startup": false,
-  "show_full_path": true,
-  "folder_exclude_patterns": [".svn", ".git", ".hg", "CVS", ".bundle", ".idea"],
-  "file_exclude_patterns": ["*.pyc", "*.pyo", "*.exe", "*.dll", "*.obj","*.o", "*.a", "*.lib", "*.so", "*.dylib", "*.ncb", "*.sdf", "*.suo", "*.pdb", "*.idb", ".DS_Store", "*.class", "*.psd", "*.db"],
-  "vintage_start_in_command_mode": true,
-  "ignored_packages": []
+	"hot_exit": false,
+	"ignored_packages":
+	[
+	],
+	"indent_guide_options":
+	[
+		"draw_active"
+	],
+	"remember_open_files": false,
+	"scroll_past_end": true,
+	"show_full_path": true,
+	"soda_classic_tabs": true,
+	"tab_size": 2,
+	"theme": "Soda Dark.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"use_tab_stops": true,
+	"vintage_start_in_command_mode": true,
+	"word_wrap": true
 }
