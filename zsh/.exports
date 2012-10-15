@@ -1,6 +1,9 @@
 # Your custom command path...
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/matteo/.rvm/bin:/Users/matteo/.rvm/bin
 
+# Adds the Code folder (with project) in the cd path
+export CDPATH=.:~/Code
+
 # Make vim the default editor
 export EDITOR="vim"
 # SublimeText2 for opening gems
