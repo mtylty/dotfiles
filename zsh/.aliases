@@ -10,4 +10,4 @@ alias dotfiles="(cd ~/.dotfiles && git pull && source ~/.zshrc)"
 alias mongodb="mongod run --config /usr/local/etc/mongod.conf"
 
 # Use Hub gem if possible
-eval "$(hubs alias -s)"
+eval "$(hub alias -s)"
