@@ -1,11 +1,10 @@
 {
-	"auto_upgrade_last_run": 1350068537,
+	"auto_upgrade_last_run": 1350309978,
 	"installed_packages":
 	[
 		"CoffeeScript",
 		"Git",
 		"Package Control",
-		"RubyTest",
 		"Theme - Soda"
 	],
 	"repositories":
