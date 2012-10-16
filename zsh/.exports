@@ -12,6 +12,12 @@ export EDITOR="vim"
 # SublimeText2 for opening gems
 export BUNDLER_EDITOR="subl"
 
+# Setting for the new UTF-8 terminal support in Lion
+export LC_CTYPE="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+export LANG="en_US.UTF-8"
+export LANGUAGE="en_US.UTF-8"
+
 # Don't clear the screen after quitting a manual page
 export MANPAGER="less -X"
 # Colors for Man Pages
