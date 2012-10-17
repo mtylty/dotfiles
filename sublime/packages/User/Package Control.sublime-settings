@@ -1,10 +1,13 @@
 {
-	"auto_upgrade_last_run": 1350309978,
+	"auto_upgrade_last_run": 1350458655,
 	"installed_packages":
 	[
+		"AdvancedNewFile",
 		"CoffeeScript",
 		"Git",
 		"Package Control",
+		"SideBarEnhancements",
+		"SublimeLinter",
 		"Theme - Soda"
 	],
 	"repositories":
