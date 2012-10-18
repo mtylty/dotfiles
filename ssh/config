@@ -1,4 +1,10 @@
-User matteo
-
 Compression yes
 CompressionLevel 9
+
+Host github.com
+  Port 22
+
+Host *
+  User matteo
+  Port 2022
+
