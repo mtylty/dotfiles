@@ -9,5 +9,8 @@ alias dotfiles="(cd ~/.dotfiles && git pull && source ~/.zshrc)"
 # Databases
 alias mongodb="mongod run --config /usr/local/etc/mongod.conf"
 
+# Services
+alias elasticsearch="elasticsearch -f -D es.config=/usr/local/Cellar/elasticsearch/0.19.10/config/elasticsearch.yml"
+
 # Use Hub gem if possible
 eval "$(hub alias -s)"
