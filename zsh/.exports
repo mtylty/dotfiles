@@ -5,12 +5,13 @@ export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/matteo/.rvm/bin:
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 # Adds the Code folder (with project) in the cd path
-export CDPATH=.:~/Code
+export CDPATH=".:~/Code"
 
 # Make vim the default editor
 export EDITOR="vim"
-# SublimeText2 for opening gems
-export BUNDLER_EDITOR="subl"
+
+# Editor for opening gems
+export BUNDLER_EDITOR="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
 
 # Setting for the new UTF-8 terminal support in Lion
 export LC_CTYPE="en_US.UTF-8"

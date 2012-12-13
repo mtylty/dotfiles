@@ -3,6 +3,9 @@ alias lockscreen="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/R
 # Start Mac OSX screensaver
 alias screensaver="open -a /System/Library/Frameworks/ScreenSaver.framework//Versions/A/Resources/ScreenSaverEngine.app"
 
+# Ruby
+alias bo="bundle open"
+
 # Update dotfiles
 alias dotfiles="(cd ~/.dotfiles && git pull && source ~/.zshrc)"
 
@@ -13,4 +16,4 @@ alias mongodb="mongod run --config /usr/local/etc/mongod.conf"
 alias elasticsearch="elasticsearch -f -D es.config=/usr/local/Cellar/elasticsearch/0.19.10/config/elasticsearch.yml"
 
 # Use Hub gem if possible
-eval "$(hub alias -s)"
+# eval "$(hub alias -s)"
