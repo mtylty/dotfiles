@@ -1,5 +1,6 @@
 Compression yes
 CompressionLevel 9
+ForwardAgent yes
 
 Host github.com
   Port 22
