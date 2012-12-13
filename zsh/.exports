@@ -1,5 +1,5 @@
 # Your custom command path...
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/matteo/.rvm/bin:/Users/matteo/.rvm/bin
+export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/Users/matteo/.rvm/bin
 
 # Load RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
