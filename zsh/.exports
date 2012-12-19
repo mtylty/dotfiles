@@ -6,6 +6,7 @@ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/matteo/.rvm/bin
 
 # Adds the Code folder (with project) in the cd path
 export CDPATH=".:~/Code"
+cdpath=(~/Code/) # RVM fix
 
 # Make vim the default editor
 export EDITOR="vim"
