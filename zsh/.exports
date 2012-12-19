@@ -1,11 +1,13 @@
 # Your custom command path...
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/matteo/.rvm/bin
 
-# Load RVM
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 
 # Adds the Code folder (with project) in the cd path
 export CDPATH=".:~/Code"
+
+cdpath=(~/Code/) # RVM fix
+# Load RVM
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"
 cdpath=(~/Code/) # RVM fix
 
 # Make vim the default editor
