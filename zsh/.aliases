@@ -5,7 +5,6 @@ alias screensaver="open -a /System/Library/Frameworks/ScreenSaver.framework//Ver
 
 # Ruby
 alias bo="bundle open"
-alias pulsar="pulsar -c git@github.com:nebulab/pulsar-conf.git"
 
 # Update dotfiles
 alias dotfiles="(cd ~/.dotfiles && git pull && source ~/.zshrc)"
