@@ -13,4 +13,4 @@ alias dotfiles="(cd ~/.dotfiles && git pull && source ~/.zshrc)"
 alias mongodb="mongod run --config /usr/local/etc/mongod.conf"
 
 # Services
-alias elasticsearch="elasticsearch -f -D es.config=/usr/local/Cellar/elasticsearch/0.19.10/config/elasticsearch.yml"
+alias elasticsearch="elasticsearch -f -D es.config=/usr/local/opt/elasticsearch/config/elasticsearch.yml"
