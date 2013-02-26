@@ -1,5 +1,5 @@
 # Your custom command path...
-export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/npm/bin
+export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 # Adds the Code folder (with project) in the cd path
 export CDPATH=".:~/Code"
@@ -7,6 +7,9 @@ cdpath=(~/Code/)
 
 # Load RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
+
+# Load NVM
+[[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"
 
 # Make vim the default editor
 export EDITOR="vim"
