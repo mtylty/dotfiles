@@ -17,6 +17,9 @@ export EDITOR="vim"
 # Editor for opening gems
 export BUNDLER_EDITOR="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
 
+# Pulsar configuration repo
+export PULSAR_CONF_REPO="nebulab/pulsar-conf"
+
 # Setting for the new UTF-8 terminal support in Lion
 export LC_CTYPE="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
