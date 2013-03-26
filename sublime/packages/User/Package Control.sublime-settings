@@ -5,10 +5,10 @@
 		"AdvancedNewFile",
 		"CoffeeScript",
 		"Git",
+		"Handlebars",
 		"Package Control",
 		"Sass",
 		"SideBarEnhancements",
-		"SublimeLinter",
 		"Theme - Soda"
 	],
 	"repositories":
