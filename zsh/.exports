@@ -11,6 +11,9 @@ cdpath=(~/Code/)
 # Load NVM
 [[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"
 
+# Load Hub if available
+eval "$(hub alias -s)"
+
 # Make vim the default editor
 export EDITOR="vim"
 
