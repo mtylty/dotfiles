@@ -3,7 +3,7 @@ export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 
 # Adds the Code folder (with project) in the cd path
 export CDPATH=".:~/Code"
-cdpath=(~/Code/)
+cdpath=(. ~/Code/)
 
 # Load RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
