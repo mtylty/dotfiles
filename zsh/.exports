@@ -1,5 +1,5 @@
 # Your custom command path...
-export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/share/npm/bin
 
 # Adds the Code folder (with project) in the cd path
 export CDPATH=".:~/Code"
