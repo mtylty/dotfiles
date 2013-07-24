@@ -5,6 +5,7 @@
   user = mtylty
 [core]
   editor = /usr/bin/vim
+  excludesfile = /opt/boxen/config/git/gitignore
 [alias]
   s = status
   co = checkout
@@ -19,3 +20,9 @@
   alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
 [color]
   ui = true
+
+[credential]
+helper = /opt/boxen/bin/boxen-git-credential
+
+[hub]
+protocol = https

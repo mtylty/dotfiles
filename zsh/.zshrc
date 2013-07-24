@@ -39,3 +39,6 @@ plugins=(bundler git knife osx rails3 rake rvm sublime)
 
 # Aliases
 [ -r "$HOME/.aliases" ] && source "$HOME/.aliases"
+
+# Boxen environment
+[ -f "/opt/boxen/env.sh" ] && source "/opt/boxen/env.sh"
