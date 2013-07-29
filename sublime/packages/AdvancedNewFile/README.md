@@ -1,5 +1,5 @@
 # AdvancedNewFile
-Advanced file creation for Sublime Text 2
+Advanced file creation for Sublime Text 2 and Sublime Text 3.
 
 ## Overview
 
@@ -13,6 +13,7 @@ Installation through [package control](http://wbond.net/sublime_packages/package
 
 * In the Command Palette, enter `Package Control: Install Package`
 * Search for `AdvancedNewFile`
+* In the Command Palette, enter `Package Control :Enable Package` -> select AdvancedNewFile
 
 ### Manual
 Clone or copy this repository into the packages directory. By default, they are located at:
@@ -28,7 +29,7 @@ Simply bring up the AdvancedNewFile input through the appropriate [key binding](
 The default directory is specified by the `default_root` setting. By default, it will be the top directory of the folders listed in the window. If this cannot be resolved, the home directory will be used. See [Settings](https://github.com/skuroda/Sublime-AdvancedNewFile#settings) (`default_root`) for more information.
 
 ## Keymaps
-If you have issues with keymaps, consider running [FindKeyConflicts](https://github.com/skuroda/FindKeyConflicts), also available through the package manager.
+If you have issues with keymaps, consider running [FindKeyConflicts](https://github.com/skuroda/FindKeyConflicts), also available through the package manager. Alternatively, set command logging to true by entering `sublime.log_commands(True)` in the Sublime Text console.
 
 ### Windows
 `ctrl+alt+n`: General keymap to create new files.
@@ -101,6 +102,14 @@ An integer value representing the folder index to use when "folder" is specified
 `ignore_case`:
 
 A boolean specifying if case should be ignored when building auto complete list.
+
+`auto_refresh_sidebar`:
+
+A boolean specifying if folders should automatically refresh and update the sidebar. In some builds, the sidebar does not refresh when contents of project folder are updated. This setting is required to refresh the sidebar in these circumstances. False by default.
+
+`show_sidebar_menu`:
+
+A boolean specifying if an AdvancedNewFile option should be shown in the sidebar context menu.
 
 ### Project Specific Settings
 All of the above settings can also be specified as part of the project specific settings. These values override any previous values set by higher level settings, with aliases being an exception. Alias settings will be merged with higher level configurations for alias. In addition, if the same alias exist for both default/user settings and project settings, the project setting will take precedence.
