@@ -42,3 +42,7 @@ plugins=(bundler git knife osx rails3 rake rvm sublime)
 
 # Boxen environment
 [ -f "/opt/boxen/env.sh" ] && source "/opt/boxen/env.sh"
+
+# I hate autocorrect!
+unsetopt correct_all
+unsetopt correct
