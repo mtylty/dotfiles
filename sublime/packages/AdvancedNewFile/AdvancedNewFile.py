@@ -4,6 +4,7 @@ import sublime_plugin
 import re
 import logging
 import errno
+import shutil
 
 SETTINGS = [
     "alias",
@@ -24,7 +25,8 @@ SETTINGS = [
     "completion_type",
     "complete_single_entry",
     "use_folder_name",
-    "relative_from_current"
+    "relative_from_current",
+    "default_extension"
 ]
 VIEW_NAME = "AdvancedNewFileCreation"
 WIN_ROOT_REGEX = r"[a-zA-Z]:(/|\\)"
@@ -39,12 +41,13 @@ logger = logging.getLogger()
 
 
 class AdvancedNewFileCommand(sublime_plugin.WindowCommand):
-    def run(self, is_python=False, initial_path=None):
+    def run(self, is_python=False, initial_path=None, rename=False):
         PLATFORM = sublime.platform().lower()
         self.root = None
         self.alias_root = None
         self.top_level_split_char = ":"
         self.is_python = is_python
+        self.rename = rename
         self.view = self.window.active_view()
 
         # Settings will be based on the view
@@ -140,6 +143,19 @@ class AdvancedNewFileCommand(sublime_plugin.WindowCommand):
                 if parts[1] != "":
                     path_list.append(parts[1])
                 path = self.top_level_split_char.join(path_list)
+            elif re.match(r"^/", path):
+                path_offset = 1
+                if PLATFORM == "windows":
+                    match = re.match(r"^/([a-zA-Z])/", path)
+                    if match:
+                        root = "%s:\\" % match.group(1)
+                        path_offset = 3
+                    else:
+                        root, _ = os.path.splitdrive(self.view.file_name())
+                        root += "\\"
+                else:
+                    root = "/"
+                path = path[path_offset:]
             # Parse if tilde used
             elif re.match(HOME_REGEX, path) and root == None:
                 root = os.path.expanduser("~")
@@ -163,6 +179,8 @@ class AdvancedNewFileCommand(sublime_plugin.WindowCommand):
                 root = root or self.window.folders()[folder_index]
         except IndexError:
             root = os.path.expanduser("~")
+
+
         return root, path
 
     def translate_alias(self, path):
@@ -242,13 +260,20 @@ class AdvancedNewFileCommand(sublime_plugin.WindowCommand):
 
         base, path = self.split_path(path_in)
 
-        creation_path = self.generate_creation_path(base, path)
+        creation_path = self.generate_creation_path(base, path, True)
         if self.show_path:
             if self.view != None:
-                self.view.set_status("AdvancedNewFile", "Creating file at %s " % \
-                    creation_path)
+                if self.rename:
+                    self.view.set_status("AdvancedNewFile", "Moving file to %s " % \
+                        creation_path)
+                else:
+                    self.view.set_status("AdvancedNewFile", "Creating file at %s " % \
+                        creation_path)
             else:
-                sublime.status_message("Creating file at %s" % creation_path)
+                if self.rename:
+                    sublime.status_message("Moving file to %s" % creation_path)
+                else:
+                    sublime.status_message("Creating file at %s" % creation_path)
         logger.debug("Creation path is '%s'" % creation_path)
 
     def generate_completion_list(self, path_in, each_list=False):
@@ -264,9 +289,10 @@ class AdvancedNewFileCommand(sublime_plugin.WindowCommand):
                 alias_list += self.generate_alias_auto_complete(filename)
                 alias_list += self.generate_project_auto_complete(filename)
         base, path = self.split_path(path_in)
-        directory, filename = os.path.split(path)
+        full_path = self.generate_creation_path(base, path)
 
-        directory = os.path.join(base, directory)
+        directory, filename = os.path.split(full_path)
+
         if os.path.isdir(directory):
             for d in os.listdir(directory):
                 full_path = os.path.join(directory, d)
@@ -399,7 +425,7 @@ class AdvancedNewFileCommand(sublime_plugin.WindowCommand):
         return compare_entry.startswith(compare_base)
 
 
-    def generate_creation_path(self, base, path):
+    def generate_creation_path(self, base, path, append_extension=False):
         if PLATFORM == "windows":
             if not re.match(WIN_ROOT_REGEX, base):
                 return base + self.top_level_split_char + path
@@ -407,7 +433,23 @@ class AdvancedNewFileCommand(sublime_plugin.WindowCommand):
             if not re.match(NIX_ROOT_REGEX, base):
                 return base + self.top_level_split_char + path
 
-        return os.path.abspath(os.path.join(base, path))
+        tokens = re.split(r"[/\\]", base) + re.split(r"[/\\]", path)
+        if tokens[0] == "":
+            tokens[0] = "/"
+        if PLATFORM == "windows":
+            tokens[0] = base[0:3]
+
+        full_path = os.path.abspath(os.path.join(*tokens))
+        if re.search(r"[/\\]$", path) or len(path) == 0:
+            full_path += os.path.sep
+        elif re.search(r"\.", tokens[-1]):
+            if re.search(r"\.$", tokens[-1]):
+                full_path += "."
+        elif append_extension:
+            filename = os.path.basename(full_path)
+            if not os.path.exists(full_path):
+                full_path += self.settings.get("default_extension", "")
+        return full_path
 
     def entered_filename(self, filename):
         # Check if valid root specified for windows.
@@ -420,7 +462,7 @@ class AdvancedNewFileCommand(sublime_plugin.WindowCommand):
                     return
 
         base, path = self.split_path(filename)
-        file_path = os.path.join(base, path)
+        file_path = self.generate_creation_path(base, path, True)
         # Check for invalid alias specified.
         if self.top_level_split_char in filename and \
             not (PLATFORM == "windows" and re.match(WIN_ROOT_REGEX, base)) and \
@@ -441,13 +483,47 @@ class AdvancedNewFileCommand(sublime_plugin.WindowCommand):
                     sublime.error_message("Cannot create '" + file_path + "'. See console for details")
                     logger.error("Exception: %s '%s'" % (e.strerror, e.filename))
             if attempt_open:
-                if os.path.isdir(file_path):
-                    if not re.search(r"(/|\\)$", file_path):
-                        sublime.error_message("Cannot open view for '" + file_path + "'. It is a directory. ")
+                if self.rename:
+                    self.rename_file(file_path)
                 else:
-                    self.window.open_file(file_path)
+                    self.open_file(file_path)
+
         self.clear()
         self.refresh_sidebar()
+
+    def open_file(self, file_path):
+        new_view = None
+        if os.path.isdir(file_path):
+            if not re.search(r"(/|\\)$", file_path):
+                sublime.error_message("Cannot open view for '" + file_path + "'. It is a directory. ")
+        else:
+            new_view = self.window.open_file(file_path)
+        return new_view
+
+    def rename_file(self, file_path):
+        if os.path.isdir(file_path):
+            if not re.search(r"(/|\\)$", file_path):
+                sublime.error_message("Cannot open view for '" + file_path + "'. It is a directory. ")
+        else:
+            if self.view:
+                window = self.view.window()
+                if self.view.file_name():
+                    self.view.run_command("save")
+                    window.focus_view(self.view)
+                    window.run_command("close")
+                    shutil.move(self.view.file_name(), file_path)
+                else:
+                    content = self.view.substr(sublime.Region(0, self.view.size()))
+                    self.view.set_scratch(True)
+                    self.view.run_command("close")
+                    window.focus_view(self.view)
+                    window.run_command("close")
+                    with open(file_path, "w") as file_obj:
+                        file_obj.write(content)
+                self.open_file(file_path)
+            else:
+                sublime.error_message("Unable to move file. No file to move.")
+
 
     def refresh_sidebar(self):
         if self.settings.get("auto_refresh_sidebar"):
@@ -475,7 +551,8 @@ class AdvancedNewFileCommand(sublime_plugin.WindowCommand):
                 init_list.append(temp_path)
                 temp_path = os.path.dirname(temp_path)
         try:
-            os.makedirs(path)
+            if not os.path.exists(path):
+                os.makedirs(path)
         except OSError as ex:
             if ex.errno != errno.EEXIST:
                 raise
