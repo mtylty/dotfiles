@@ -3,15 +3,5 @@ alias lockscreen="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/R
 # Start Mac OSX screensaver
 alias screensaver="open -a /System/Library/Frameworks/ScreenSaver.framework//Versions/A/Resources/ScreenSaverEngine.app"
 
-# Ruby
-alias bo="bundle open"
-
 # Update dotfiles
 alias dotfiles="(cd ~/.dotfiles && git pull && source ~/.zshrc)"
-
-# Databases
-alias mongodb="mongod run --config /usr/local/etc/mongod.conf"
-
-# Services
-alias elasticsearch="elasticsearch -f -D es.config=/usr/local/opt/elasticsearch/config/elasticsearch.yml"
-alias redis="redis-server /usr/local/etc/redis.conf"
