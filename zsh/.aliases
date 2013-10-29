@@ -5,3 +5,13 @@ alias screensaver="open -a /System/Library/Frameworks/ScreenSaver.framework//Ver
 
 # Update dotfiles
 alias dotfiles="(cd ~/.dotfiles && git pull && source ~/.zshrc)"
+
+# Ruby aliases
+alias be="bundle exec"
+alias bi="bundle install"
+alias bo="bundle open"
+
+# Console aliases
+alias g="git"
+alias la="ls -la"
+alias ll="ls -l"
