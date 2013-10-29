@@ -6,6 +6,9 @@ alias screensaver="open -a /System/Library/Frameworks/ScreenSaver.framework//Ver
 # Update dotfiles
 alias dotfiles="(cd ~/.dotfiles && git pull && source ~/.zshrc)"
 
+# Open SumblimeText
+alias st="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl ."
+
 # Ruby aliases
 alias be="bundle exec"
 alias bi="bundle install"
@@ -13,6 +16,7 @@ alias bo="bundle open"
 
 # Console aliases
 alias g="git"
+alias gs="git status"
 alias l="ls"
 alias la="ls -la"
 alias ll="ls -l"
