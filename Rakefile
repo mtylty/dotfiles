@@ -15,6 +15,7 @@ task :install do
       sources.each do |source|
         if File.directory?(source)
           # directory to directory
+          FileUtils.mkdir_p(full_destination)
           symlink!(source, full_destination)
         elsif File.file?(source) && File.directory?(full_destination)
           # file to directory

@@ -1,6 +1,6 @@
-# Bash disabled in favour of zsh
-# bash:
-#   '*': '~'
+fish:
+  'boxen': '~/.config/fish/boxen'
+  '*.fish': '~/.config/fish'
 git:
   '*': '~'
 ruby:
@@ -12,6 +12,4 @@ sublime:
    'installed packages': '~/Library/Application Support/Sublime Text 2/Installed Packages'
    'pristine packages': '~/Library/Application Support/Sublime Text 2/Pristine Packages'
 vim:
-  '*': '~'
-zsh:
   '*': '~'
