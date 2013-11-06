@@ -1,5 +1,6 @@
 fish:
   'boxen': '~/.config/fish/boxen'
+  'functions': '~/.config/fish/functions'
   '*.fish': '~/.config/fish'
 git:
   '*': '~'
