@@ -44,6 +44,12 @@ To execute the command to rename the current active view, use the command `advan
         {"keys": ["alt+shift+n"] "command": "advanced_new_file", "args": {"rename": true}}
     ]
 
+#### Rename File - Side Bar Context Menu
+To create a sidebar menu entry, you need to create a file named `Side Bar.sublime-menu`. It is recommended you place this in your `User` directory. Like the key binding files, this menu is a list of command entries. Each entry contains 3 items. The first is the `caption`. This is the string that appears in the menu. Next is the `command`. For this, you will use `advanced_new_file_rename_at`. Finally, are the `args`. You will need to specify `{"files": []}`. An example entry can be seen below.
+
+    [
+        { "caption": "ANF: Rename", "command": "advanced_new_file_rename_at", "args": {"files": []}}
+    ]
 
 ## Keymaps
 If you have issues with keymaps, consider running [FindKeyConflicts](https://github.com/skuroda/FindKeyConflicts), also available through the package manager. Alternatively, set command logging to true by entering `sublime.log_commands(True)` in the Sublime Text console.
@@ -147,6 +153,15 @@ Boolean setting specifying if relative paths should be based on the current work
 `default_extension`:
 
 String containing the default file extension. Note the extension is only applied if the specified path does not contain a dot (.) character.
+
+`folder_permissions`:
+
+String representing permissions to be applied to newly created folders. E.g. "777" -> RWX for user, group, and other.
+
+`file_permissions`:
+
+String representing permissions to be applied to newly created files. E.g. "777" -> RWX for user, group, and other.
+
 
 ### Project Specific Settings
 All of the above settings can also be specified as part of the project specific settings. These values override any previous values set by higher level settings, with aliases being an exception. Alias settings will be merged with higher level configurations for alias. In addition, if the same alias exist for both default/user settings and project settings, the project setting will take precedence.
