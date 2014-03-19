@@ -1,7 +1,3 @@
-fish:
-  'boxen': '~/.config/fish/boxen'
-  'functions': '~/.config/fish/functions'
-  '*.fish': '~/.config/fish'
 git:
   '*': '~'
 ruby:
@@ -13,4 +9,6 @@ sublime:
    'installed packages': '~/Library/Application Support/Sublime Text 2/Installed Packages'
    'pristine packages': '~/Library/Application Support/Sublime Text 2/Pristine Packages'
 vim:
+  '*': '~'
+zsh:
   '*': '~'
