@@ -20,8 +20,7 @@
   alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
 [color]
   ui = true
-
 [hub]
-protocol = https
+  protocol = https
 [push]
-	default = matching
+  default = current
