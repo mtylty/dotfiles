@@ -1,5 +1,5 @@
 # Your custom command path...
-export PATH=$PATH:./node_modules/.bin
+export PATH="$HOME/.rbenv/bin:./node_modules/.bin:/usr/local/bin:$PATH"
 
 # Adds the Code folder (with project) in the cd path
 export CDPATH=".:~/Code"
@@ -38,3 +38,6 @@ export HISTCONTROL=ignoredups
 
 # Add date and time in bash history
 export HISTTIMEFORMAT="%h/%d - %H:%M:%S "
+
+# Setup rbenv
+eval "$(rbenv init - --no-rehash)"
