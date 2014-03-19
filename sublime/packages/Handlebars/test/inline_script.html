@@ -41,7 +41,6 @@ categories:
 				</a>
 				{{/each}}
 
-				{{! TODO: @index and @key }}
 				{{#each array}}
 					{{@index}}: {{this}}
 				{{/each}}
@@ -71,6 +70,10 @@ categories:
 				<a href="{{url}}">{{title}}</a>
 			{{/list}}
 			<button class="tiny button" {{action addToCampaign id="add-campaign" bubbles=false}}>Choose</button>
+			<p class="{{class}}">Filler</p>
+			<a class="pull-left" {{bind-attr href=link}}>
+				<img {{bind-attr src=this.thumbLink alt=this.name}} class="media-object">
+			</a>
 	</script>
 
 	<script type="text/javascript">

@@ -1,4 +1,11 @@
 # Changelog for AdvancedNewFile
+Information from future releases can be seen by browsing the `messages` directory for the version.
+
+- 9 November 2013 / 1.0.0
+    - Switch to semantic versioning.
+    - Rename default with special token for current file.
+    - README updates.
+
 - 4 October 2013
     - Rename file using side bar context menu.
     - Set folder and file permissions for created folders and files.
