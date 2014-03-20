@@ -18,3 +18,6 @@ alias gs "git status"
 alias l "ls"
 alias la "ls -la"
 alias ll "ls -l"
+
+# Use hub for git
+alias git "hub"
