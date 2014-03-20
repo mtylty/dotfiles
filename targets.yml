@@ -1,3 +1,6 @@
+fish:
+  'functions': '~/.config/fish/functions'
+  '*.fish': '~/.config/fish'
 git:
   '*': '~'
 ruby:
