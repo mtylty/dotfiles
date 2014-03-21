@@ -8,7 +8,7 @@ set -x CDPATH . ~/Code
 set -x EDITOR "vim"
 
 # Editor for opening gems
-set -x BUNDLER_EDITOR "/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl"
+set -x BUNDLER_EDITOR "/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
 
 # Pulsar configuration repo
 set -x PULSAR_CONF_REPO "nebulab/pulsar-conf"

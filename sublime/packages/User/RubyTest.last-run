@@ -1,4 +1,0 @@
-{
-	"last_test_file": "user_spec.rb",
-	"last_test_run": "cd /Users/matteo/Code/senzagenzie/ && rspec spec/models/user_spec.rb -l 19"
-}

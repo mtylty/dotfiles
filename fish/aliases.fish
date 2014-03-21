@@ -4,7 +4,7 @@ alias lockscreen "/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/R
 alias screensaver "open -a /System/Library/Frameworks/ScreenSaver.framework//Versions/A/Resources/ScreenSaverEngine.app"
 
 # Open SumblimeText
-alias st "/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl ."
+alias st "/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl ."
 
 # Ruby aliases
 alias be "bundle exec"

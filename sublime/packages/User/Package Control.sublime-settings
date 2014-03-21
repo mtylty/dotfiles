@@ -1,20 +1,12 @@
 {
-	"auto_upgrade_last_run": null,
 	"installed_packages":
 	[
-		"AdvancedNewFile",
-		"CoffeeScript",
-		"Git",
-		"Handlebars",
-		"Package Control",
-		"Puppet",
-		"Sass",
+		"GitGutter",
+		"Origami",
 		"SideBarEnhancements",
+		"sublime-github",
 		"Theme - Soda",
-		"TrailingSpaces"
-	],
-	"repositories":
-	[
-		"https://github.com/maltize/sublime-text-2-ruby-tests.git"
+		"TrailingSpaces",
+		"Vintageous"
 	]
 }
