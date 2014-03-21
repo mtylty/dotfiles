@@ -1,7 +1,9 @@
 {
 	"installed_packages":
 	[
+		"EmberScript",
 		"GitGutter",
+		"Handlebars",
 		"Origami",
 		"SideBarEnhancements",
 		"sublime-github",
