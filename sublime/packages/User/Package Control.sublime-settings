@@ -1,6 +1,7 @@
 {
 	"installed_packages":
 	[
+		"Better CoffeeScript",
 		"EmberScript",
 		"GitGutter",
 		"Handlebars",
