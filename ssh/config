@@ -3,6 +3,9 @@ ForwardAgent yes
 Host github.com
   Port 22
 
+Host bitbucket.org
+  Port 22
+
 Host *
   User matteo
   Port 2022
