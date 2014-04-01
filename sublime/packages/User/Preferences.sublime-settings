@@ -35,7 +35,8 @@
 		".hg",
 		"CVS",
 		".bundle",
-		".idea"
+		".idea",
+		".sass-cache"
 	],
 	"font_face": "inconsolata",
 	"font_size": 15.0,
