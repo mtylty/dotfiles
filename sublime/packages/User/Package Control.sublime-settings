@@ -8,6 +8,9 @@
 		"Origami",
 		"SideBarEnhancements",
 		"sublime-github",
+		"SublimeLinter",
+		"SublimeLinter-annotations",
+		"SublimeLinter-ruby",
 		"Theme - Soda",
 		"TrailingSpaces",
 		"Vintageous"
