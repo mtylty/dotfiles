@@ -23,3 +23,7 @@
   protocol = https
 [push]
   default = current
+[pull]
+  rebase = true
+[merge]
+  ff = only
