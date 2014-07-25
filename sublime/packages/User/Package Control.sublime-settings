@@ -2,16 +2,16 @@
 	"installed_packages":
 	[
 		"Better CoffeeScript",
+		"Comments Aware Enter",
 		"EmberScript",
-		"GitGutter",
 		"Handlebars",
+		"Modific",
 		"Origami",
 		"SideBarEnhancements",
 		"sublime-github",
-		"SublimeLinter",
-		"SublimeLinter-annotations",
-		"SublimeLinter-ruby",
 		"Theme - Soda",
-		"TrailingSpaces"
+		"Theme - Spacegray",
+		"Vintageous",
+		"Whitespace"
 	]
 }

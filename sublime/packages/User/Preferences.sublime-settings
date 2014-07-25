@@ -1,7 +1,7 @@
 {
 	"auto_indent": true,
 	"caret_style": "phase",
-	"color_scheme": "Packages/User/Monokai Soda (SL).tmTheme",
+	"color_scheme": "Packages/Theme - Spacegray/base16-eighties.dark.tmTheme",
 	"create_window_at_startup": false,
 	"detect_indentation": true,
 	"draw_minimap_border": true,
@@ -43,6 +43,7 @@
 	"hot_exit": false,
 	"ignored_packages":
 	[
+		"Vintage"
 	],
 	"indent_guide_options":
 	[
@@ -58,7 +59,7 @@
 	"show_minimap": false,
 	"soda_classic_tabs": true,
 	"tab_size": 2,
-	"theme": "Soda Dark.sublime-theme",
+	"theme": "Spacegray Eighties.sublime-theme",
 	"translate_tabs_to_spaces": true,
 	"use_tab_stops": true,
 	"vintage_start_in_command_mode": true,
