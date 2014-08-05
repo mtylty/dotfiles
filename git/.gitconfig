@@ -12,6 +12,8 @@
   br = branch
   d = diff --color-words
   a = add
+  pl = pull
+  ps = push
   lg = "!source ~/.githelpers && pretty_git_log"
   l = !git lg -30
   la = !git lg --all
