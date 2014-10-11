@@ -3,6 +3,8 @@ fish:
   '*.fish': '~/.config/fish'
 git:
   '*': '~'
+rbenv:
+  '*': '~/.rbenv'
 ruby:
   '*': '~'
 ssh:
