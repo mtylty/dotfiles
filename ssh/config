@@ -6,6 +6,9 @@ Host github.com
 Host bitbucket.org
   Port 22
 
+Host heroku.com
+  Port 22
+
 Host *
   User matteo
   Port 2022
