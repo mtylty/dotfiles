@@ -1,5 +1,20 @@
 #!/bin/sh
 
-brew reinstall rbenv --HEAD
-brew install rbenv-aliases
-brew install rbenv-default-gems
+brew_tap 'caskroom/cask'
+brew_install_or_upgrade 'brew-cask'
+
+brew cask install dropbox
+brew cask install google-chrome
+brew cask install iterm2
+brew cask install google-drive
+brew cask install atom
+
+gem_install_or_update 'pulsar'
+
+brew_install_or_upgrade 'mysql'
+brew_install_or_upgrade 'htop'
+brew_install_or_upgrade 'rbenv-aliases'
+brew_install_or_upgrade 'rbenv-default-gems'
+
+brew_launchctl_restart 'mysql'
+
