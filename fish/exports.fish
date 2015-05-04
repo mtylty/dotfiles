@@ -8,7 +8,7 @@ set -x CDPATH . ~/Code
 set -x EDITOR "vim"
 
 # Editor for opening gems
-set -x BUNDLER_EDITOR "/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl"
+set -x BUNDLER_EDITOR "/usr/local/bin/atom"
 
 # Pulsar configuration repo
 set -x PULSAR_CONF_REPO "nebulab/pulsar-conf"
@@ -18,6 +18,9 @@ set -x LC_CTYPE "en_US.UTF-8"
 set -x LC_ALL "en_US.UTF-8"
 set -x LANG "en_US.UTF-8"
 set -x LANGUAGE "en_US.UTF-8"
+
+set -x LDFLAGS "-L/usr/local/opt/openssl/lib"
+set -x CPPFLAGS "-I/usr/local/opt/openssl/include"
 
 # Don't clear the screen after quitting a manual page
 set -x MANPAGER "less -X"

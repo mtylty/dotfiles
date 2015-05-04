@@ -3,18 +3,28 @@
 brew_tap 'caskroom/cask'
 brew_install_or_upgrade 'brew-cask'
 
+# Support for fish...
+brew reinstall rbenv --HEAD
+
 brew cask install dropbox
 brew cask install google-chrome
 brew cask install iterm2
 brew cask install google-drive
 brew cask install atom
+brew cask install skype
+brew cask install java
 
+gem_install_or_update 'ru'
 gem_install_or_update 'pulsar'
 
 brew_install_or_upgrade 'mysql'
 brew_install_or_upgrade 'htop'
 brew_install_or_upgrade 'rbenv-aliases'
 brew_install_or_upgrade 'rbenv-default-gems'
+brew_install_or_upgrade 'fish'
+brew_install_or_upgrade 'wget'
+brew_install_or_upgrade 'phantomjs'
+brew_install_or_upgrade 'elasticsearch'
+brew_install_or_upgrade 'pwgen'
 
 brew_launchctl_restart 'mysql'
-

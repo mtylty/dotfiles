@@ -32,3 +32,5 @@
 	smudge = git-media-smudge %f
 [url "https://"]
 	insteadOf = git://
+[credential]
+	helper = osxkeychain
