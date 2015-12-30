@@ -5,3 +5,6 @@ set -x FISH_HOME "$HOME/.config/fish"
 
 # Aliases
 [ -r "$FISH_HOME/aliases.fish" ]; and source "$FISH_HOME/aliases.fish"
+
+# Remove Atom storage
+rm -rf ~/.atom/storage

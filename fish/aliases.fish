@@ -1,11 +1,3 @@
-# Lock Mac OSX Session
-alias lockscreen "/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend"
-# Start Mac OSX screensaver
-alias screensaver "open -a /System/Library/Frameworks/ScreenSaver.framework//Versions/A/Resources/ScreenSaverEngine.app"
-
-# Open SumblimeText
-alias st "/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl ."
-
 # Ruby aliases
 alias be "bundle exec"
 alias bi "bundle install"
