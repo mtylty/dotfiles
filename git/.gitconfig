@@ -34,3 +34,5 @@
 	compactionHeuristic = true
 [credential]
 	helper = osxkeychain
+[commit]
+  template = ~/.gitmessage
