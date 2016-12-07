@@ -12,6 +12,10 @@ task :install do
 
       full_destination = File.expand_path(destination)
 
+      if destination.end_with?('/')
+        FileUtils.mkdir_p(full_destination)
+      end
+
       sources.each do |source|
         if File.directory?(source)
           # directory to directory

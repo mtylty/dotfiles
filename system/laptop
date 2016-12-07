@@ -1,12 +1,7 @@
 #!/bin/sh
 
-brew_tap 'homebrew/services'
-brew_tap 'caskroom/cask'
-
-brew_install_or_upgrade 'brew-cask'
-
-# Support for fish...
-brew reinstall rbenv --HEAD
+brew tap homebrew/services
+brew tap caskroom/cask
 
 brew cask install dropbox
 brew cask install google-chrome
@@ -15,18 +10,18 @@ brew cask install google-drive
 brew cask install atom
 brew cask install skype
 brew cask install java
+brew cask install franz
+brew cask install firefox
 
 gem_install_or_update 'ru'
 gem_install_or_update 'pulsar'
 
-brew_install_or_upgrade 'mysql'
-brew_install_or_upgrade 'htop'
-brew_install_or_upgrade 'rbenv-aliases'
-brew_install_or_upgrade 'rbenv-default-gems'
-brew_install_or_upgrade 'fish'
-brew_install_or_upgrade 'wget'
-brew_install_or_upgrade 'phantomjs'
-brew_install_or_upgrade 'elasticsearch'
-brew_install_or_upgrade 'pwgen'
-
-brew_launchctl_restart 'mysql'
+brew install 'mysql'
+brew install 'htop'
+brew install 'rbenv-aliases'
+brew install 'rbenv-default-gems'
+brew install 'fish'
+brew install 'wget'
+brew install 'phantomjs'
+brew install 'elasticsearch'
+brew install 'pwgen'

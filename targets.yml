@@ -4,11 +4,11 @@ fish:
 git:
   '*': '~'
 rbenv:
-  '*': '~/.rbenv'
+  '*': '~/.rbenv/'
 ruby:
   '*': '~'
 ssh:
-  'config': '~/.ssh'
+  'config': '~/.ssh/'
 system:
   'laptop': '~/.laptop.local'
 vim:

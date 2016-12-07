@@ -22,7 +22,7 @@
 [color]
   ui = true
 [hub]
-  protocol = https
+  protocol = ssh
 [push]
   default = current
 [pull]
@@ -30,7 +30,7 @@
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
-[url "https://"]
-	insteadOf = git://
+[diff]
+	compactionHeuristic = true
 [credential]
 	helper = osxkeychain
