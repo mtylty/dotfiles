@@ -2,6 +2,7 @@
 alias be "bundle exec"
 alias bi "bundle install"
 alias bo "bundle open"
+alias rubocop_pr "git fetch; and git diff-tree -r --no-commit-id --name-only master@\{u\} head | xargs ls -1 2>/dev/null | grep '\.rb\$' | xargs rubocop"
 
 # Console aliases
 alias g "git"
@@ -13,3 +14,4 @@ alias ll "ls -l"
 
 # Use hub for git
 alias git "hub"
+
