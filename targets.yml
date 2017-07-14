@@ -13,5 +13,3 @@ system:
   'laptop': '~/.laptop.local'
 vim:
   '*': '~'
-zsh:
-  '*': '~'
