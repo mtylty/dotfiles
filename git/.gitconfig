@@ -1,6 +1,6 @@
 [user]
   name = Matteo Latini
-  email = mtylty@gmail.com
+  email = matteolatini@@nebulab.it
 [github]
   user = mtylty
 [core]
@@ -14,11 +14,9 @@
   a = add
   pl = pull
   ps = push
-  lg = "!source ~/.githelpers && pretty_git_log"
+  rb = rebase
+  lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
   l = !git lg -30
-  la = !git lg --all
-  ll = log --stat --abbrev-commit
-  alias = !git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort
 [color]
   ui = true
 [hub]
@@ -28,11 +26,11 @@
 [pull]
   rebase = true
 [filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
+  clean = git-media-clean %f
+  mudge = git-media-smudge %f
 [diff]
-	compactionHeuristic = true
+  compactionHeuristic = true
 [credential]
-	helper = osxkeychain
+  helper = osxkeychain
 [commit]
   template = ~/.gitmessage
