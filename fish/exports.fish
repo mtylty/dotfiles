@@ -10,9 +10,6 @@ set -x EDITOR "vim"
 # Editor for opening gems
 set -x BUNDLER_EDITOR "/usr/local/bin/atom"
 
-# Pulsar configuration repo
-set -x PULSAR_CONF_REPO "nebulab/pulsar-conf"
-
 # Setting for the new UTF-8 terminal support in Lion
 set -x LC_CTYPE "en_US.UTF-8"
 set -x LC_ALL "en_US.UTF-8"
@@ -40,7 +37,7 @@ set -g fish_color_command 005fd7
 set -g fish_color_comment red
 set -g fish_color_cwd green
 set -g fish_color_cwd_root red
-set -g fish_color_error red\x1e\x2d\x2dbold
+set -g fish_color_error red
 set -g fish_color_escape cyan
 set -g fish_color_history_current cyan
 set -g fish_color_host ff8700

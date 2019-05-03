@@ -1,6 +1,6 @@
 [user]
-  name = Matteo Latini
-  email = matteolatini@@nebulab.it
+	name = Matteo Latini
+	email = matteolatini@nebulab.it
 [github]
   user = mtylty
 [core]
@@ -15,7 +15,7 @@
   pl = pull
   ps = push
   rb = rebase
-  lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+  lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
   l = !git lg -30
 [color]
   ui = true
@@ -34,3 +34,8 @@
   helper = osxkeychain
 [commit]
   template = ~/.gitmessage
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
