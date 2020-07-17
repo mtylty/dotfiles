@@ -57,5 +57,5 @@ set -g fish_pager_color_description 555\x1eyellow
 set -g fish_pager_color_prefix cyan
 set -g fish_pager_color_progress cyan
 
-# Setup rbenv
-. (rbenv init -|psub)
+# Setup asdf
+source (brew --prefix asdf)/asdf.fish
