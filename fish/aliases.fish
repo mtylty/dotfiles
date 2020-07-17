@@ -8,10 +8,7 @@ alias rubocop_pr "git fetch; and git diff-tree -r --no-commit-id --name-only mas
 alias g "git"
 alias gd "git diff"
 alias gs "git status"
+alias gs "git status"
 alias l "ls"
 alias la "ls -la"
 alias ll "ls -l"
-
-# Use hub for git
-alias git "hub"
-
