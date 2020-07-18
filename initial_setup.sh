@@ -15,6 +15,9 @@ brew install vim
 brew install github/gh/gh
 brew install imagemagick
 brew install yarn
+brew install bat
+brew install httpie
+brew install mas
 brew install asdf
 asdf plugin add ruby
 
@@ -29,3 +32,7 @@ brew cask install cleanmymac
 brew cask install harvest
 brew cask install telegram
 brew cask install whatsapp
+brew cask install steam
+
+mas install 1176895641 # Spark
+mas install 506189836  # Harvest

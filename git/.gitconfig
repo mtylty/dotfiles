@@ -1,6 +1,6 @@
 [user]
-	name = Matteo Latini
-	email = matteolatini@nebulab.it
+  name = Matteo Latini
+  email = matteolatini@nebulab.it
 [github]
   user = mtylty
 [core]
@@ -9,7 +9,6 @@
   s = status
   co = checkout
   ci = commit
-  br = branch
   d = diff --color-words
   a = add
   pl = pull
@@ -33,7 +32,7 @@
 [commit]
   template = ~/.gitmessage
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
