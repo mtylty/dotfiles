@@ -5,6 +5,7 @@
   user = mtylty
 [core]
   editor = /usr/bin/vim
+	attributesfile = /Users/matteo/.gitattributes
 [alias]
   s = status
   co = checkout
