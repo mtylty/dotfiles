@@ -8,7 +8,7 @@ set -x CDPATH . ~/Code
 set -x EDITOR "vim"
 
 # Editor for opening gems
-set -x BUNDLER_EDITOR "/usr/local/bin/atom"
+set -x BUNDLER_EDITOR "/usr/local/bin/code"
 
 # Setting for the new UTF-8 terminal support in Lion
 set -x LC_CTYPE "en_US.UTF-8"
@@ -18,6 +18,9 @@ set -x LANGUAGE "en_US.UTF-8"
 
 set -x LDFLAGS "-L/usr/local/opt/openssl/lib"
 set -x CPPFLAGS "-I/usr/local/opt/openssl/include"
+
+# For signing git commits
+set -x GPG_TTY (tty)
 
 # Don't clear the screen after quitting a manual page
 set -x MANPAGER "less -X"
@@ -58,4 +61,5 @@ set -g fish_pager_color_prefix cyan
 set -g fish_pager_color_progress cyan
 
 # Setup asdf
-source (brew --prefix asdf)/asdf.fish
+echo -e "\nsource "(brew --prefix asdf)"/libexec/asdf.fish" >> ~/.config/fish/config.fish
+

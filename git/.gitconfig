@@ -1,6 +1,7 @@
 [user]
   name = Matteo Latini
-  email = matteolatini@nebulab.it
+  email = matteolatini@nebulab.com
+	signingkey = C5A8430FA61E0E2E
 [github]
   user = mtylty
 [core]
@@ -32,8 +33,11 @@
   helper = osxkeychain
 [commit]
   template = ~/.gitmessage
+	gpgsign = true
 [filter "lfs"]
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
   process = git-lfs filter-process
   required = true
+[gpg]
+	program = gpg
