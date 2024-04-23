@@ -9,6 +9,5 @@ set -x FISH_HOME "$HOME/.config/fish"
 # Remove Atom storage
 rm -rf ~/.atom/storage
 
-source /usr/local/opt/asdf/libexec/asdf.fish
-
+# Source asdf config
 source /usr/local/opt/asdf/libexec/asdf.fish

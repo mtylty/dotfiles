@@ -60,6 +60,3 @@ set -g fish_pager_color_description 555\x1eyellow
 set -g fish_pager_color_prefix cyan
 set -g fish_pager_color_progress cyan
 
-# Setup asdf
-echo -e "\nsource "(brew --prefix asdf)"/libexec/asdf.fish" >> ~/.config/fish/config.fish
-
