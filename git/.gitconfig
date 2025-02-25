@@ -1,12 +1,12 @@
 [user]
   name = Matteo Latini
   email = matteolatini@nebulab.com
-	signingkey = C5A8430FA61E0E2E
+  signingkey = /Users/matteo/.ssh/id_rsa.pub
 [github]
   user = mtylty
 [core]
   editor = /usr/bin/vim
-	attributesfile = /Users/matteo/.gitattributes
+  attributesfile = /Users/matteo/.gitattributes
 [alias]
   s = status
   co = checkout
@@ -33,11 +33,12 @@
   helper = osxkeychain
 [commit]
   template = ~/.gitmessage
-	gpgsign = true
+  gpgsign = true
 [filter "lfs"]
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
   process = git-lfs filter-process
   required = true
 [gpg]
-	program = gpg
+  program = gpg
+  format = ssh
